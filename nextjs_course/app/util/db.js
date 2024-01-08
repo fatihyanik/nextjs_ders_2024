@@ -7,13 +7,6 @@ export const users = [
         password: "alexmerson12",
     },
     {
-        id: "1",
-        name: "Alex Merson",
-        age: 29,
-        email: "alexmerson@gmail.com",
-        password: "alexmerson12",
-    },
-    {
         id: "2",
         name: "Fatih",
         age: 30,

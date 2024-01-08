@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
+import { users } from "@/app/util/db";
 
 export function GET() {
-    return NextResponse.json({ success: "hello this message is succesfully delivered" })
+    const data = users
+    return NextResponse.json({data})
 }
