@@ -1,20 +1,8 @@
+import { users } from "@/app/util/db";
 import { NextResponse } from "next/server";
 
-export async function POST(req) {
-    let { name, age, email } = await req.json();
-
-    if (!name || !age || !email) {
-        return NextResponse.json(
-            { result: "required filed not found", ok: false },
-            { status: 400 }
-        );
-    }
-
-    return NextResponse.json(
-        {
-            result: "Credientials Verified, User Successfully Created.",
-            ok: true,
-        },
-        { status: 201 }
-    );
+// 1. All User Data
+export function GET() {
+    const data = users;
+    return NextResponse.json({ data }, { status: 200 });
 }
