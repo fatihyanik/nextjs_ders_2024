@@ -1,18 +1,20 @@
 import { NextResponse } from "next/server";
 
-export async function POST(req, res) {
-    // let data = await req.json();
-    // console.log(data);
+export async function POST(req) {
+    let { name, age, email } = await req.json();
 
-     let {email, password} = await req.json();
-    // console.log(email, password);
-
-    if (!email || !password) {
+    if (!name || !age || !email) {
         return NextResponse.json(
-            { error: "resquired filed not found" },
+            { result: "required filed not found", ok: false },
             { status: 400 }
-        )
+        );
     }
 
-    return NextResponse.json({ res: "Credentials verified, User succesfully logged in." });
+    return NextResponse.json(
+        {
+            result: "Credientials Verified, User Successfully Created.",
+            ok: true,
+        },
+        { status: 201 }
+    );
 }
