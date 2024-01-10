@@ -9,9 +9,9 @@ import {
 } from "@material-tailwind/react";
 import AllUsers from "./AllUsers";
 import SpecificUser from "./SpecificUser";
-// import CreateUser from "./CreateUser";
-// import UpdateUser from "./UpdateUser";
-// import DeleteUser from "./DeleteUser";
+import CreateUser from "./CreateUser";
+import UpdateUser from "./UpdateUser";
+import DeleteUser from "./DeleteUser";
 
 const AccordionUI = () => {
   const [open, setOpen] = useState(1);
@@ -28,7 +28,7 @@ const AccordionUI = () => {
           <AllUsers />
         </AccordionBody>
       </Accordion>
-     <Accordion open={open === 2}>
+      <Accordion open={open === 2}>
         <AccordionHeader onClick={() => handleOpen(2)}>
           Search For Specific User
         </AccordionHeader>
@@ -36,7 +36,7 @@ const AccordionUI = () => {
           <SpecificUser />
         </AccordionBody>
       </Accordion>
-      {/* <Accordion open={open === 3}>
+      <Accordion open={open === 3}>
         <AccordionHeader onClick={() => handleOpen(3)}>
           Create New User
         </AccordionHeader>
@@ -59,7 +59,7 @@ const AccordionUI = () => {
         <AccordionBody>
           <DeleteUser />
         </AccordionBody>
-      </Accordion> */}
+      </Accordion>
     </section>
   );
 };
