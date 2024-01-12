@@ -1,0 +1,147 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #fafafa;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: rgb(33, 40, 74);
+  font-weight: 500;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  color: #151875;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+  object-fit: contain;
+}
+
+span {
+  width: max-content;
+}
+
+button {
+  outline: none;
+  background-color: none;
+  border: none;
+  background-color: white;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.icon {
+  fill: hsl(233, 11%, 84%);
+}
+
+.icon:hover {
+  fill: #ff006e;
+}
+
+.plusbtn {
+  box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+  -webkit-box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+  -moz-box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+}
+
+.wrappper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.todo-list {
+  background-color: white;
+  border-radius: 1rem;
+  margin-bottom: 4.8rem;
+  min-width: 400px;
+  box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+  -webkit-box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+  -moz-box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+}
+
+.list {
+  display: flex;
+  flex-direction: row;
+  height: 3.4rem;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 2.4rem;
+  padding-right: 2.4rem;
+  gap: 2.4rem;
+  border-radius: 0.1rem solid hsl(236, 33%, 92%);
+}
+
+.iconWrapper {
+  display: flex;
+  gap: 1rem;
+}
+
+.addTodo {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.addTodo form {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.addTodo button, input {
+  box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+  -webkit-box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+  -moz-box-shadow: -1px 5px 20px 10px rgba(157, 162, 235, 0.3);
+  width: max-content;
+}
+
+.addTodo input {
+  border: none;
+  outline: none;
+  min-width: 500px;
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+}
+
+.addTodo button {
+  font-size: 1.2rem;
+  padding: 1rem 2rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.addTodo button:hover {
+  color: #ff006e
+}
+
+.addTodo span {
+  font-size: 1.2rem;
+  background-color: #aceea9;
+  padding: 1rem 2rem;
+  width: 100%;
+}
