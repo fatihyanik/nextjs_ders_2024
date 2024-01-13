@@ -1,95 +1,85 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import HeadingText from '@/components/HeadingText'
+import Navbar from '@/components/Navbar'
+import { deleteContact } from '@/lib/action'
+import { getContacts } from '@/lib/data'
+import Link from 'next/link'
+import React from 'react'
+import {FiTrash, FiEdit} from "react-icons/fi"
 
-export default function Home() {
+const HomePage = async  () => {
+  const contacts = await getContacts()
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <main>
+      <HeadingText
+      title='Contact Book'
+      description='All Contacts Below'
+      />
+      <Navbar />
+      <div className='flex flex-col px-4 py-4'>
+      <div>
+        <table className='table-auto w-full text-center whitespace-nowrap'>
+          <thead>
+            <tr>
+              <th 
+              className='px-4 py-3 title-font text-center tracking-wider font-medium text-gray-700 text-sm bg-gray-100 rounded-tl rounded-bl'
+              >
+                FirstName
+              </th>
+              <th
+              className='px-4 py-3 title-font text-center tracking-wider font-medium text-gray-700 text-sm bg-gray-100'
+              >
+                LastName
+              </th>
+              <th
+              className='px-4 py-3 title-font text-center tracking-wider font-medium text-gray-700 text-sm bg-gray-100'
+              >
+                Email
+              </th>
+              <th
+              className='px-4 py-3 title-font text-center tracking-wider font-medium text-gray-700 text-sm bg-gray-100'
+              >
+               Contact #
+              </th>
+              <th
+              className='px-4 py-3 title-font text-center tracking-wider font-medium text-gray-700 text-sm bg-gray-100'
+              >
+                Action
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            {
+              contacts.map((contact) => (
+                <tr key={contact.id}>
+                  <td className='border-t-2 text-center border-gray-200 px-4 py-3'>{contact.firstName}</td>
+                  <td className='border-t-2 text-center border-gray-200 px-4 py-3'>{contact.lastName}</td>
+                  <td className='border-t-2 text-center border-gray-200 px-4 py-3'>{contact.email}</td>
+                  <td className='border-t-2 text-center border-gray-200 px-4 py-3'>{contact.phone}</td>
+                  <td className='border-t-2 text-center border-gray-200 px-4 py-3 flex items-center gap-1'>
+                  <Link href={`contact/${contact.id}`}>
+                    <FiEdit />
+                  </Link>
+                  <form
+                  action={deleteContact}
+                  >
+                    <input hidden name='id' value={contact.id} />
+                  <button
+                  type='submit'
+                  className='mt-2'
+                  >
+                  <FiTrash style={{color: 'red'}} />
+                  </button>
+                  </form>
+                  </td>
+                </tr>
+              ))
+            }
+          </tbody>
+        </table>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
       </div>
     </main>
   )
 }
+
+export default HomePage
