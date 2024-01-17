@@ -1,8 +1,8 @@
-## 1. What is NextJS? 
+## 1. What is NextJS?
 
 ```jsx
 Next.js is an open-source JavaScript framework that is built on '(top of React)', a popular JavaScript library for building user interfaces.
-It is designed to make it easier to create '(server-rendered)' React applications with a focus on developer productivity, performance, and 
+It is designed to make it easier to create '(server-rendered)' React applications with a focus on developer productivity, performance, and
 SEO (Search Engine Optimization). Next.js provides a set of tools and conventions that simplify various aspects of building web applications.
 ```
 
@@ -11,6 +11,7 @@ Next.js, kullanıcı arayüzleri oluşturmak için popüler bir JavaScript küt�
 ```
 
 ## 2. What is key features of Next.js?
+
 ```jsx
 1. '(Page-Based Structure)': The application follows a page-based structure, where each page corresponds to a file in the "pages" folder within the project directory. This leads to automatic route generation.
 2. '(Server-Side Rendering (SSR))': Next.js facilitates server-side rendering, meaning that pages are generated on the server and then sent to the user. This results in faster initial page loads and improves search engine optimization (SEO).
@@ -42,6 +43,7 @@ Next.js, geliştiricilere hızlı bir şekilde ölçeklenebilir ve performanslı
 ```
 
 ## 3. What is Routing?
+
 ```jsx
 Routing is like giving '(directions)' to a website. When you type a web address (URL) into your browser, routing tells the website which page or thing to show you. It's like a '(map that quides)' the website to the right place when you click a link or enter a web address. So, routing helps the website know what to display based on what you're looking for.
 ```
@@ -50,24 +52,26 @@ Routing is like giving '(directions)' to a website. When you type a web address 
 Yönlendirme, bir web sitesine '(yol tarifi)' vermek gibidir. Tarayıcınıza bir web adresi (URL) yazdığınızda, yönlendirme web sitesine size hangi sayfayı veya şeyi göstereceğini söyler. Bir bağlantıya tıkladığınızda veya bir web adresi girdiğinizde web sitesini doğru yere yönlendiren bir '(harita)' gibidir. Yani yönlendirme, web sitesinin aradığınız şeye göre neyi görüntüleyeceğini bilmesine yardımcı olur.
 ```
 
-
 ## 4. Basic Routing
+
 ```
 Basic Routing
 https://localhost:3000/about
 bu url adresini olusturmak icin about folder'i olusturulur ve icine page.js file'i acilir
-not: file ismi page.js olmak zorunda 
+not: file ismi page.js olmak zorunda
 ```
 
 ## 5. Nested Routing
+
 ```
 Nested Routing
-https://localhost:3000//users/about
+https://localhost:3000/users/about
 bu url adresini olusturmak icin users folder'i olusturulur ve icine page.js file'i acilir ve icine about folder'i olusturulup icine page.js file acilir
-not: file ismi page.js olmak zorunda 
+not: file ismi page.js olmak zorunda
 ```
 
 ## 6. What is Link?
+
 ```
 Link is a component provided by Next.js allows you to create links to navigate between pages in your application.
 
@@ -86,6 +90,7 @@ Genellikle bileşeninizin JSX kodunda, Next.js uygulamanızdaki diğer sayfalara
 ```
 
 ## 7. What is useRouter()?
+
 ```
 useRouter is a hook provided by Next.js that allows you to access the router object and its properties within your component.
 
@@ -100,4 +105,60 @@ useRouter, Next.js tarafından sağlanan ve bileşeninizdeki yönlendirici nesne
 Yönlendirici üzerinde programatik kontrol sağlar ve bileşeninizdeki kullanıcı etkileşimlerine veya olaylara yanıt olarak farklı sayfalara gitmenize veya yönlendirmeyle ilgili diğer eylemleri gerçekleştirmenize olanak tanır.
 
 Navigasyonu işlemeniz veya rotaya özgü bilgilere doğrudan bileşen mantığınızda erişmeniz gerektiğinde kullanışlıdır.
+```
+
+## 8. What is ignoring routes?
+
+```
+Bir route olustururken url adresinde görülmesini istemedigimiz route folder'ini () icine yazariz.
+Örnegin: register ve login sayfalarinin bulundugu bir auth folderinin url ismi
+https://localhost:3000/register veya https://localhost:3000/login olsun istiyorsak auth folderini (auth) bu sekilde yazmaliyiz.
+```
+
+## 9. What is Dynamic Routes?
+
+```
+Dynamic routes in Next.js refer to a feature that allows you to create web pages with variable or dynamic parts in the URL.
+Instead of defining individual routes for every possible URL, you can create a single route pattern that matches a variety of dynamic values.
+This is extremely useful when you have pages that share a common structure but differ based on specific information in the URL.
+```
+
+```
+Next.js'deki dinamik rotalar, URL'de değişken veya dinamik parçalar içeren web sayfaları oluşturmanıza olanak tanıyan bir özelliği ifade eder.
+Olası her URL için ayrı ayrı rotalar tanımlamak yerine, çeşitli dinamik değerlerle eşleşen tek bir rota deseni oluşturabilirsiniz.
+Bu, ortak bir yapıyı paylaşan ancak URL'deki belirli bilgilere göre farklılık gösteren sayfalarınız olduğunda son derece kullanışlıdır.
+```
+
+```
+https://localhost:3000/users/fatih bu url adresinde fatih kisisini dinamik olarak degistirmek icin yapilmasi gerekenler:
+1. app folderinin icine users folderi acilir ve her zaman yapilmasi gereken page.js file'i olusturulur.
+2. users folder'inin icine [user] köseli parantez icine user isimli folder acilir ve onun icine page.js file'i olusturulur.
+3. page.js icine ise 'use client' yazilir sonrasinda da {params} yardimiyla dynamic routelar olusturulur.
+```
+
+## 10. Catch-All Routes
+
+```
+In Next.js, the [...foldername] notation indicates that you are using a catch-all route, which allows you to capture multiple URL segments and treat them as a dynamic array of values. This is useful when you want to create dynamic routes that can handle varying numbers of URL segments.
+```
+
+```
+Next.js'de [...foldername] notasyonu, birden fazla URL segmentini yakalamanıza ve bunları dinamik bir değer dizisi olarak ele almanıza olanak tanıyan bir catch-all rotası kullandığınızı gösterir. Bu, değişen sayıda URL segmentini işleyebilen dinamik rotalar oluşturmak istediğinizde kullanışlıdır.
+```
+
+```
+https://localhost:3000/users/fatih/projects/e-commerce/ gibi bir url adresimiz oldugunu varsayalim.
+bu url adresinde https://localhost:3000/users adresinden sonrasini yani bu kismi fatih/projects/e-commerce/ dynamic olarak kullanabiliriz.
+```
+
+## 11. Page Not Found
+
+```
+Next.js te bu sayfayi olusturmak cok basittir.  app folder'inin icine not-found.js file'i olusturmamiz yeterlidir. Next.js te zaten bu sayfa default olarak bulunmaktadir
+```
+
+## 12. Redirect?
+
+```
+Next.js 14 ile birlikte gelen bir özellik, redirect fonksiyonudur. Bu fonksiyon, sayfa içindeki bir bileşen veya yönlendirme işlevi aracılığıyla sayfanın başka bir yerine yönlendirme yapmanıza olanak tanır.
 ```
