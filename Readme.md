@@ -162,3 +162,56 @@ Next.js te bu sayfayi olusturmak cok basittir.  app folder'inin icine not-found.
 ```
 Next.js 14 ile birlikte gelen bir özellik, redirect fonksiyonudur. Bu fonksiyon, sayfa içindeki bir bileşen veya yönlendirme işlevi aracılığıyla sayfanın başka bir yerine yönlendirme yapmanıza olanak tanır.
 ```
+
+## 13. What is Server-Component?
+
+```
+React Server Components allow you to write UI that can be rendered and optionally cached on the server. In Next.js, the rendering work is further split by route segments to enable streaming and partial rendering, and there are three different server rendering strategies:
+
+Static Rendering
+Dynamic Rendering
+Streaming
+```
+- [Server Component Details](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
+
+
+```
+React Sunucu Bileşenleri, sunucuda render edilebilen ve isteğe bağlı olarak önbelleğe alınabilen kullanıcı arayüzü yazmanıza olanak tanır. Next.js'de render işi, akış ve kısmi render'ı etkinleştirmek için rota segmentleri ile daha da bölünmüştür ve üç farklı sunucu render stratejisi vardır:
+
+Statik Rendering
+Dinamik Rendering
+Akış
+```
+
+## 14. What is Client Component?
+
+```
+Client Components allow you to write interactive UI that can be rendered on the client at request time. In Next.js, client rendering is opt-in, meaning you have to explicitly decide what components React should render on the client.
+```
+
+```
+İstemci Bileşenleri, istek anında istemcide işlenebilen etkileşimli kullanıcı arayüzü yazmanıza olanak tanır. Next.js'de istemci oluşturma isteğe bağlıdır, yani React'in istemcide hangi bileşenleri oluşturması gerektiğine açıkça karar vermeniz gerekir.
+```
+
+- [Client Component Details](https://nextjs.org/docs/app/building-your-application/rendering/client-components)
+
+## 15. Where do you need to server component or client component?
+
+- [Server ve Client componentlerin kullanim yerleri ile ilgili bilgiler](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns)
+
+```
+Server Componentin kullanildigi yerler:
+1. Fetch data		
+2. Access backend resources (directly)		
+3. Keep sensitive information on the server (access tokens, API keys, etc)		
+4. Keep large dependencies on the server / Reduce client-side JavaScript
+```
+
+```
+Client Componentin kullanildigi yerler:
+1. Add interactivity and event listeners (onClick(), onChange(), etc)		
+2. Use State and Lifecycle Effects (useState(), useReducer(), useEffect(), etc)		
+3. Use browser-only APIs		
+4. Use custom hooks that depend on state, effects, or browser-only APIs		
+5. Use React Class components
+```
