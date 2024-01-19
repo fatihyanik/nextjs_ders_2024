@@ -172,8 +172,8 @@ Static Rendering
 Dynamic Rendering
 Streaming
 ```
-- [Server Component Details](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
 
+- [Server Component Details](https://nextjs.org/docs/app/building-your-application/rendering/server-components)
 
 ```
 React Sunucu Bileşenleri, sunucuda render edilebilen ve isteğe bağlı olarak önbelleğe alınabilen kullanıcı arayüzü yazmanıza olanak tanır. Next.js'de render işi, akış ve kısmi render'ı etkinleştirmek için rota segmentleri ile daha da bölünmüştür ve üç farklı sunucu render stratejisi vardır:
@@ -201,17 +201,27 @@ Client Components allow you to write interactive UI that can be rendered on the 
 
 ```
 Server Componentin kullanildigi yerler:
-1. Fetch data		
-2. Access backend resources (directly)		
-3. Keep sensitive information on the server (access tokens, API keys, etc)		
+1. Fetch data
+2. Access backend resources (directly)
+3. Keep sensitive information on the server (access tokens, API keys, etc)
 4. Keep large dependencies on the server / Reduce client-side JavaScript
 ```
 
 ```
 Client Componentin kullanildigi yerler:
-1. Add interactivity and event listeners (onClick(), onChange(), etc)		
-2. Use State and Lifecycle Effects (useState(), useReducer(), useEffect(), etc)		
-3. Use browser-only APIs		
-4. Use custom hooks that depend on state, effects, or browser-only APIs		
+1. Add interactivity and event listeners (onClick(), onChange(), etc)
+2. Use State and Lifecycle Effects (useState(), useReducer(), useEffect(), etc)
+3. Use browser-only APIs
+4. Use custom hooks that depend on state, effects, or browser-only APIs
 5. Use React Class components
+```
+
+## 16. What is Layout?
+
+```
+A layout is like a blueprint that helps you make all the pages of your website lok the same. It's a way to put common things, header footer, and other stuff that appears on every page, in one place. This makes it easy to keep a similar look on all your web pages. So, a layout is a handy tool that lets you keep things tidy and consistent on your website.
+```
+
+```
+Düzen, web sitenizin tüm sayfalarının aynı görünmesini sağlamanıza yardımcı olan bir plan gibidir. Ortak şeyleri, üstbilgi altbilgisini ve her sayfada görünen diğer şeyleri tek bir yere koymanın bir yoludur. Bu, tüm web sayfalarınızda benzer bir görünüm elde etmenizi kolaylaştırır. Dolayısıyla düzen, web sitenizde her şeyi düzenli ve tutarlı tutmanızı sağlayan kullanışlı bir araçtır.
 ```
