@@ -225,3 +225,5 @@ A layout is like a blueprint that helps you make all the pages of your website l
 ```
 Düzen, web sitenizin tüm sayfalarının aynı görünmesini sağlamanıza yardımcı olan bir plan gibidir. Ortak şeyleri, üstbilgi altbilgisini ve her sayfada görünen diğer şeyleri tek bir yere koymanın bir yoludur. Bu, tüm web sayfalarınızda benzer bir görünüm elde etmenizi kolaylaştırır. Dolayısıyla düzen, web sitenizde her şeyi düzenli ve tutarlı tutmanızı sağlayan kullanışlı bir araçtır.
 ```
+
+## 17. What  is 
